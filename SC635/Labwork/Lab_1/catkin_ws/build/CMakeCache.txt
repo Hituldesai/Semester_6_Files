@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+Aaron_170070050_BINARY_DIR:STATIC=/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050
+
+//Value Computed by CMake
+Aaron_170070050_SOURCE_DIR:STATIC=/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/src/aaron_170070050
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
@@ -284,6 +290,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//Value Computed by CMake
+aaron_170070050_BINARY_DIR:STATIC=/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050
+
+//Value Computed by CMake
+aaron_170070050_SOURCE_DIR:STATIC=/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/src/aaron_170070050
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 
@@ -335,6 +347,9 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
+
+//The directory containing a CMake configuration file for rospy.
+rospy_DIR:PATH=/opt/ros/melodic/share/rospy/cmake
 
 
 ########################
@@ -446,7 +461,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -1,0 +1,8 @@
+prefix=/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/install
+
+Name: aaron_170070050
+Description: Description of aaron_170070050
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

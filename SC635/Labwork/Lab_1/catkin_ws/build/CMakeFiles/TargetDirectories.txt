@@ -35,3 +35,11 @@
 /home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/list_install_components.dir
 /home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir
 /home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/rebuild_cache.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/install/strip.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/install/local.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/test.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/list_install_components.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/edit_cache.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/_catkin_empty_exported_target.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/rebuild_cache.dir
+/home/aaronjs/Files/Repositories_and_Directories/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/aaron_170070050/CMakeFiles/install.dir
