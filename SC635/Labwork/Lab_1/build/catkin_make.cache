@@ -1,0 +1,2 @@
+aaron_170070050
+-DCATKIN_DEVEL_PREFIX=/home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/devel -DCMAKE_INSTALL_PREFIX=/home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/install -G Unix Makefiles
