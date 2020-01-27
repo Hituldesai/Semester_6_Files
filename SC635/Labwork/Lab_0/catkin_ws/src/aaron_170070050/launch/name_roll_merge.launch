@@ -1,7 +1,0 @@
-<launch>
-  <group ns="merge">
-    <node pkg="aaron_170070050" name="name_pub" type="name_talker.py"    output="screen"/>
-    <node pkg="aaron_170070050" name="roll_pub" type="roll_talker.py"    output="screen"/>
-    <node pkg="aaron_170070050" name="sub"      type="merge_listener.py" output="screen"/>
-  </group>
-</launch>
