@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/cat
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/test_results
+	/usr/bin/python3 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
