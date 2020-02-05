@@ -1,2 +1,0 @@
-geometry2/geometry2:geometry2/test_tf2:geometry2/tf2:geometry2/tf2_bullet:geometry2/tf2_eigen:geometry2/tf2_geometry_msgs:geometry2/tf2_kdl:geometry2/tf2_msgs:geometry2/tf2_py:geometry2/tf2_ros:geometry2/tf2_sensor_msgs:geometry2/tf2_tools:trajectory
--DCATKIN_DEVEL_PREFIX=/home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/install -G Unix Makefiles

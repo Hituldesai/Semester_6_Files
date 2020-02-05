@@ -1,8 +1,0 @@
-prefix=/home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/install
-
-Name: tf2_py
-Description: Description of tf2_py
-Version: 0.6.5
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: rospy tf2

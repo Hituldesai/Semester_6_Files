@@ -1,8 +1,0 @@
-prefix=/home/aaronjs/GitHub/Semester_6_Files/SC635/Labwork/Lab_1/catkin_ws/devel
-
-Name: trajectory
-Description: Description of trajectory
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
