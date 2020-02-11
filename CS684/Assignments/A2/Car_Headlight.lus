@@ -1,0 +1,20 @@
+node Headlight (ON: bool; MODE: bool^2) returns (LIGHT, HI: bool);
+let
+	LIGHT = ON;
+	HI = if not ON then false
+		else if not MODE[0] and not MODE[1] then false
+		else if not MODE[0] and MODE[1] then true
+		else ModCounter(true -> false, true);
+tel
+
+node ModCounter (RST, S: bool) returns (O: bool);
+var C: int;
+let
+	C = if RST then 0
+		else if pre(C)=11 then (0 -> pre(C))
+		else if S then (0 -> pre(C))+1
+		else (0 -> pre(C));
+	O = if C=0 then false
+		else if C=11 then false
+		else true;
+tel
