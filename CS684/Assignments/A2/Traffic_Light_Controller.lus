@@ -1,4 +1,4 @@
-node Headlight (ON: bool; MODE: int) returns (LIGHT, HI: bool);
+node TRF_LT (ON: bool; MODE: int) returns (LIGHT, HI: bool);
 var FL_val: int;
 let
 	LIGHT	 = ON;

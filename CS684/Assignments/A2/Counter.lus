@@ -1,0 +1,18 @@
+node Mod12Counter (clock, reset: bool) returns (Q: bool^4);
+let
+	Q[0] = not reset and JK_FF(1, 1, clock);
+	Q[1] = not reset and JK_FF(Q[0], Q[0], clock);
+	Q[2] = not reset and JK_FF(Q[0] and Q[1], Q[0] and Q[1], clock);
+	Q[3] = not reset and JK_FF(Q[0] and Q[1] and Q[2], Q[0] and Q[1] and Q[2], clock);
+tel
+
+node JK_FF (J, K, clock: bool) returns (Q: bool);
+var Q_prev: bool;
+let
+	Q_prev	= false -> pre(Q);
+	Q	= if not clock		 then Q_prev
+		else if(not J and not K) then Q_prev
+		else if(not J and K)	 then false
+		else if(J and not K)	 then true
+		else			      not Q_prev;
+tel
