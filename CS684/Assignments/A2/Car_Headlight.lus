@@ -1,23 +1,19 @@
 node Headlight (ON: bool; MODE: int) returns (LIGHT, HI: bool);
-var FL_val: int;
+var FLASHING: bool;
 let
 	LIGHT	 = ON;
-	FL_val	 = 0 -> pre(FL_val) + 1;
+	FLASHING = (MODE=1);
 	HI	 = if not ON then false
-			else if (MODE%3=0)  then false
-			else if (MODE%3=2)  then true
-			else if (FL_val<10) then true
-			else false;
+			else if (MODE=0)  then false
+			else if (MODE=2)  then true
+			else Countdown(FLASHING and not(false->pre(FLASHING)),  10);
 tel
 
-node ModCounter (RST, S: bool) returns (O: bool);
-var C: int;
+node Countdown (reset: bool; start: int) returns (C: bool);
+var O: int;
 let
-	C = if RST then 0
-		else if pre(C)=11 then (0 -> pre(C))
-		else if S then (0 -> pre(C))+1
-		else (0 -> pre(C));
-	O = if C=0 then false
-		else if C=11 then false
-		else true;
+	O = if reset then start
+		else if pre(O)>0 then pre(O)-1
+		else 0;
+	C = if O>0 then true else false;
 tel
