@@ -2,8 +2,6 @@
 from manimlib.imports import *
 from functools import partial
 
-# sum_functions = []
-# k = 0
 class Shapes(Scene):
 	def construct(self):
 		circle = Circle()
@@ -146,18 +144,10 @@ class PlotSinusoids(GraphScene_Dec):
 		ind_graph02	= self.get_graph(self.fun2, BLUE)
 		ind_graph03	= self.get_graph(self.fun3, PURPLE)
 		ind_graph04	= self.get_graph(self.fun4, ORANGE)
-		ind_frgph01	= self.get_graph(self.frf1, RED)
-		ind_frgph02	= self.get_graph(self.frf2, BLUE)
-		ind_frgph03	= self.get_graph(self.frf3, PURPLE)
-		ind_frgph04	= self.get_graph(self.frf4, ORANGE)
 		sum_graph2	= self.get_graph(self.acc_fun2, BLUE)
 		sum_graph3	= self.get_graph(self.acc_fun3, BLUE)
 		sum_graph4	= self.get_graph(self.acc_fun4, BLUE)
 		sum_graph5	= self.get_graph(self.acc_fun5, BLUE)
-		sum_frgph2	= self.get_graph(self.acc_frf2, BLUE)
-		sum_frgph3	= self.get_graph(self.acc_frf3, BLUE)
-		sum_frgph4	= self.get_graph(self.acc_frf4, BLUE)
-		sum_frgph5	= self.get_graph(self.acc_frf5, BLUE)
 		xaxis_dis	= NumberLine(x_min = 0, x_max = 11, include_numbers = True, include_tip = True, label_direction = DOWN, unit_size=10.0/10.0)
 		vert_lines	= self.get_vertical_lines_to_graph(ind_graph01,0,0.01,11,color=YELLOW)
 		samp_points	= []
@@ -219,15 +209,38 @@ class PlotSinusoids(GraphScene_Dec):
 		self.wait(1)
 		self.play(Transform(ind_graph01, sum_graph5), Transform(line18[0],line18[4]))
 		self.wait(1)
-		self.play(FadeOut(sum_graph5), FadeOut(line16), FadeOut(line17), FadeOut(line18[0]))
-		self.play(ShowCreation(line20), FadeIn(line21))
+		self.play(FadeOut(ind_graph01), FadeOut(sum_graph5), FadeOut(line18[0]))
+		self.wait(0.5)
+		self.play(FadeOut(line15), FadeOut(line16), FadeIn(line20))
+		self.wait(0.25)
+		self.play(FadeOut(vert_lines), FadeOut(dots), FadeOut(line17), FadeIn(line21))
 		self.wait(1)
-		self.play(ReplacementTransform(line21, line22))
+		self.play(FadeOut(line21), FadeIn(line22))
 		self.wait(2)
-		self.x_min = -5000
-		self.x_max =  5000
-		self.axes_color = RED
-		self.play(ShowCreation(ind_frgph01), ShowCreation(line18[0]))
+		
+		self.x_min			= -10
+		self.x_max			=  5000
+		self.axes_color		= RED
+		self.x_axis_label	= "$\\frac{\\omega}{2\\pi}$"
+		self.y_axis_label	= "$F\\left(\\frac{\\omega}{2\\pi}\\right)$"
+		self.x_labeled_nums	= np.linspace(0, 200, 5000)
+		self.y_labeled_nums	= np.linspace(0.0, 1.0, 4.0)
+		self.x_label_decimals = 0
+		self.y_label_decimals = 1
+		self.setup_axes(animate=True)
+		ind_frgph01	= self.get_graph(self.frf1, RED)
+		ind_frgph02	= self.get_graph(self.frf2, BLUE)
+		ind_frgph03	= self.get_graph(self.frf3, PURPLE)
+		ind_frgph04	= self.get_graph(self.frf4, ORANGE)
+		sum_frgph2	= self.get_graph(self.acc_frf2, BLUE)
+		sum_frgph3	= self.get_graph(self.acc_frf3, BLUE)
+		sum_frgph4	= self.get_graph(self.acc_frf4, BLUE)
+		sum_frgph5	= self.get_graph(self.acc_frf5, BLUE)
+		
+		line18[0]  = TexMobject("\\# terms = 1")
+		line18[0].shift(3*DOWN)
+		
+		self.play(ShowCreation(ind_frgph01), FadeIn(line18[0]))
 		self.wait(1)
 		self.play(Transform(ind_frgph01, sum_frgph2), Transform(line18[0],line18[1]))
 		self.wait(1)
@@ -334,31 +347,31 @@ class PlotSinusoids(GraphScene_Dec):
 		return acc
 
 	def frf1(self,x):
-		if (abs(x) == 100):
+		if (abs(x - 100) < 10):
 			return 1
 		else:
 			return 0
 
 	def frf2(self,x):
-		if (abs(x) == 900 or abs(x) == 1100):
+		if (abs(x - 900) < 10 or abs(x - 1100) < 10):
 			return 1
 		else:
 			return 0
 
 	def frf3(self,x):
-		if (abs(x) == 1900 or abs(x) == 2100):
+		if (abs(x - 1900) < 10 or abs(x - 2100) < 10):
 			return 1
 		else:
 			return 0
 
 	def frf4(self,x):
-		if (abs(x) == 2900 or abs(x) == 3100):
+		if (abs(x < 2900) < 10 or abs(x - 3100) < 10):
 			return 1
 		else:
 			return 0
 
 	def frf5(self,x):
-		if (abs(x) == 3900 or abs(x) == 4100):
+		if (abs(x - 3900) < 10 or abs(x - 4100) < 10):
 			return 1
 		else:
 			return 0
