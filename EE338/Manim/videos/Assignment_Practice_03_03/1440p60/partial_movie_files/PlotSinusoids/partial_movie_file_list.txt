@@ -70,4 +70,3 @@ file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/Assignment_
 file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/Assignment_Practice_03_03/1440p60/partial_movie_files/PlotSinusoids/00069.mp4'
 file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/Assignment_Practice_03_03/1440p60/partial_movie_files/PlotSinusoids/00070.mp4'
 file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/Assignment_Practice_03_03/1440p60/partial_movie_files/PlotSinusoids/00071.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/Assignment_Practice_03_03/1440p60/partial_movie_files/PlotSinusoids/00072.mp4'

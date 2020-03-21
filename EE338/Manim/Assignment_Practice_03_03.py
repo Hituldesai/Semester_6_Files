@@ -88,9 +88,9 @@ class PlotSinusoids(GraphScene_Dec):
 		line17	= TextMobject("(The summation plots are scaled to fit the screen)")
 		line18	= [TexMobject("\\# terms = " + str(n)) for n in range(1,101)]
 		line19	= TextMobject("n")
-		line20	= TextMobject("Now consider the frequency domain transformations:")
-		line21	= TextMobject("A single sine wave is an impulse in this domain")
-		line22	= TextMobject("Adding up the sines implies adding up the impulses")
+		line20	= TextMobject("In the frequency domain,")
+		line21	= TextMobject("a sine wave transforms to an impulse")
+		line22	= TextMobject("adding up the sines implies superposing the impulses")
 		eqtn01	= TexMobject("x(t) = \\cos(2 \\pi 100 t - 60^o)",  color=RED)
 		eqtn02	= TexMobject("x(t) = \\cos(2 \\pi 900 t + 60^o)",  color=BLUE)
 		eqtn03	= TexMobject("x(t) = \\cos(2 \\pi 1100 t - 60^o)", color=PURPLE)
@@ -213,59 +213,73 @@ class PlotSinusoids(GraphScene_Dec):
 		self.wait(0.5)
 		self.play(FadeOut(line15), FadeOut(line16), FadeIn(line20))
 		self.wait(0.25)
-		self.play(FadeOut(vert_lines), FadeOut(dots), FadeOut(line17), FadeIn(line21))
-		self.wait(1)
-		self.play(FadeOut(line21), FadeIn(line22))
-		self.wait(2)
+		self.play(FadeOut(vert_lines), FadeOut(dots))
+		self.wait(0.5)
 		
-		self.x_min			= -10
-		self.x_max			=  5000
-		self.axes_color		= RED
+		self.x_min			=    0
+		self.x_max			= 5200
+		self.y_min			= -1.5
+		self.y_max			=  2.5
+		self.y_axis_height	=    3
+		self.axes_color		=  RED
+		self.graph_origin	= 5*LEFT + 1*DOWN
 		self.x_axis_label	= "$\\frac{\\omega}{2\\pi}$"
 		self.y_axis_label	= "$F\\left(\\frac{\\omega}{2\\pi}\\right)$"
-		self.x_labeled_nums	= np.linspace(0, 200, 5000)
-		self.y_labeled_nums	= np.linspace(0.0, 1.0, 4.0)
+		self.x_labeled_nums	= np.linspace(0, 5000, 11)
+		self.y_labeled_nums	= []
 		self.x_label_decimals = 0
-		self.y_label_decimals = 1
+		self.y_label_decimals = 0
+		self.x_tick_frequency = 10000
+		self.y_tick_frequency = 10000
+		samp_imp	= [Arrow(self.coords_to_point(100, 0), self.coords_to_point(100, 3))]
+		imps		= VGroup(*samp_imp)
+		
+		self.play(FadeOut(line17), FadeIn(line21))
 		self.setup_axes(animate=True)
-		ind_frgph01	= self.get_graph(self.frf1, RED)
-		ind_frgph02	= self.get_graph(self.frf2, BLUE)
-		ind_frgph03	= self.get_graph(self.frf3, PURPLE)
-		ind_frgph04	= self.get_graph(self.frf4, ORANGE)
-		sum_frgph2	= self.get_graph(self.acc_frf2, BLUE)
-		sum_frgph3	= self.get_graph(self.acc_frf3, BLUE)
-		sum_frgph4	= self.get_graph(self.acc_frf4, BLUE)
-		sum_frgph5	= self.get_graph(self.acc_frf5, BLUE)
+		self.play(ShowCreation(imps))
+		self.wait(2)
 		
-		line18[0]  = TexMobject("\\# terms = 1")
-		line18[0].shift(3*DOWN)
 		
-		self.play(ShowCreation(ind_frgph01), FadeIn(line18[0]))
+		samp_imp.append(Arrow(self.coords_to_point((0+1)*1000 - 100, 0), self.coords_to_point((0+1)*1000 - 100, 3)))
+		samp_imp.append(Arrow(self.coords_to_point((0+1)*1000 + 100, 0), self.coords_to_point((0+1)*1000 + 100, 3)))
+		imps		= VGroup(*samp_imp)
+		line18[0]	= line18[1]
+		self.play(FadeOut(line21), FadeIn(line22), ShowCreation(imps), Transform(line18[0],line18[1]))
 		self.wait(1)
-		self.play(Transform(ind_frgph01, sum_frgph2), Transform(line18[0],line18[1]))
+
+		samp_imp.append(Arrow(self.coords_to_point((1+1)*1000 - 100, 0), self.coords_to_point((1+1)*1000 - 100, 3)))
+		samp_imp.append(Arrow(self.coords_to_point((1+1)*1000 + 100, 0), self.coords_to_point((1+1)*1000 + 100, 3)))
+		imps = VGroup(*samp_imp)
+		self.play(ShowCreation(imps), Transform(line18[0],line18[2]))
 		self.wait(1)
-		self.play(Transform(ind_frgph01, sum_frgph3), Transform(line18[0],line18[2]))
+		
+		samp_imp.append(Arrow(self.coords_to_point((2+1)*1000 - 100, 0), self.coords_to_point((2+1)*1000 - 100, 3)))
+		samp_imp.append(Arrow(self.coords_to_point((2+1)*1000 + 100, 0), self.coords_to_point((2+1)*1000 + 100, 3)))
+		imps = VGroup(*samp_imp)
+		self.play(ShowCreation(imps), Transform(line18[0],line18[3]))
 		self.wait(1)
-		self.play(Transform(ind_frgph01, sum_frgph4), Transform(line18[0],line18[3]))
-		self.wait(1)
-		self.play(Transform(ind_frgph01, sum_frgph5), Transform(line18[0],line18[4]))
+		
+		samp_imp.append(Arrow(self.coords_to_point((3+1)*1000 - 100, 0), self.coords_to_point((3+1)*1000 - 100, 3)))
+		samp_imp.append(Arrow(self.coords_to_point((3+1)*1000 + 100, 0), self.coords_to_point((3+1)*1000 + 100, 3)))
+		imps = VGroup(*samp_imp)
+		self.play(ShowCreation(imps), Transform(line18[0],line18[4]))
 		self.wait(1)
 		
 	def fun1(self, x):
 		phi0 = -60*PI/180;
-		return np.cos(2*PI*100*x + phi0) #f = 100Hz
+		return np.cos(2*PI*100*x + phi0)
 
 	def fun2(self, x):
 		phi0 = -60*PI/180;
-		return np.cos(2*PI*900*x - phi0) #f = 900Hz
+		return np.cos(2*PI*900*x - phi0)
 
 	def fun3(self, x):
 		phi0 = -60*PI/180;
-		return np.cos(2*PI*1100*x + phi0) #f = 1100Hz
+		return np.cos(2*PI*1100*x + phi0)
 
 	def fun4(self, x):
 		phi0 = -60*PI/180;
-		return np.cos(2*PI*1900*x - phi0) #f = 1900Hz
+		return np.cos(2*PI*1900*x - phi0)
 
 	def fun_gen(self,k,x):
 		phi0 = -60*PI/180;
@@ -345,65 +359,3 @@ class PlotSinusoids(GraphScene_Dec):
 				acc = acc + self.fun_gen(i,x)[0] + self.fun_gen(i,x)[1]
 			acc = acc + self.fun_gen(m,x)[0]
 		return acc
-
-	def frf1(self,x):
-		if (abs(x - 100) < 10):
-			return 1
-		else:
-			return 0
-
-	def frf2(self,x):
-		if (abs(x - 900) < 10 or abs(x - 1100) < 10):
-			return 1
-		else:
-			return 0
-
-	def frf3(self,x):
-		if (abs(x - 1900) < 10 or abs(x - 2100) < 10):
-			return 1
-		else:
-			return 0
-
-	def frf4(self,x):
-		if (abs(x < 2900) < 10 or abs(x - 3100) < 10):
-			return 1
-		else:
-			return 0
-
-	def frf5(self,x):
-		if (abs(x - 3900) < 10 or abs(x - 4100) < 10):
-			return 1
-		else:
-			return 0
-
-	def acc_frf2(self,x):
-		if (self.frf1(x) == 1):
-			return 1
-		elif (self.frf2(x) == 1):
-			return 1
-		else:
-			return 0
-
-	def acc_frf3(self,x):
-		if (self.acc_frf2(x) == 1):
-			return 1
-		elif (self.frf3(x) == 1):
-			return 1
-		else:
-			return 0
-
-	def acc_frf4(self,x):
-		if (self.acc_frf3(x) == 1):
-			return 1
-		elif (self.frf4(x) == 1):
-			return 1
-		else:
-			return 0
-
-	def acc_frf5(self,x):
-		if (self.acc_frf4(x) == 1):
-			return 1
-		elif (self.frf5(x) == 1):
-			return 1
-		else:
-			return 0
