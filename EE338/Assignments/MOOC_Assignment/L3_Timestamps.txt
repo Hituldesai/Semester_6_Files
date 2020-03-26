@@ -1,0 +1,8 @@
+Title : Sampling Theorem and Discrete Systems (Mega Group 3: Groups 7,8,9)
+
+TimeStamps:
+
+00:00 - 12:50 :- Review of Lecture 2,Challenge 1(Sum of "confusing" Sinusoids) 
+12:50 - 22:40 :- Idealized Sampling, Spectrum of Sampled Signals
+22:40 - 38:09 :- Signal Reconstruction and Aliasing, Challenge 2(Minimum Sampling Frequency)
+38:09 - 53:50 :- Filters, Linear Shift Invariance, Discrete Systems
