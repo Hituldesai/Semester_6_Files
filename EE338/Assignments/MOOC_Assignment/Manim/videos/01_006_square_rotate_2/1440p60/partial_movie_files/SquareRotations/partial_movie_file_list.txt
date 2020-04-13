@@ -1,2 +1,0 @@
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/01_006_square_rotate_2/1440p60/partial_movie_files/SquareRotations/00000.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/01_006_square_rotate_2/1440p60/partial_movie_files/SquareRotations/00001.mp4'

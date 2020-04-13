@@ -1,7 +1,0 @@
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/04_001_mathEq/1440p60/partial_movie_files/Equations/00000.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/04_001_mathEq/1440p60/partial_movie_files/Equations/00001.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/04_001_mathEq/1440p60/partial_movie_files/Equations/00002.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/04_001_mathEq/1440p60/partial_movie_files/Equations/00003.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/04_001_mathEq/1440p60/partial_movie_files/Equations/00004.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/04_001_mathEq/1440p60/partial_movie_files/Equations/00005.mp4'
-file '/media/aaronjs/DATA/GitHub/Semester_6_Files/EE338/Manim/videos/04_001_mathEq/1440p60/partial_movie_files/Equations/00006.mp4'
